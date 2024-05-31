@@ -25,9 +25,7 @@ passport.use(new GitHubStrategy({
     done(null, profile);
 }))
 
-//Init Passport on app and handle serialization callback requirements
-app.use(passport.initialize());
-
+//Handle serialization callback requirements
 passport.serializeUser((user, done) => {
   done(null, user);
 })
